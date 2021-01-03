@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "299265168031",
+    "project_id": "myanmarmoneyexchanger-ef79d",
+    "storage_bucket": "myanmarmoneyexchanger-ef79d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299265168031:android:51e68569b273bf137708aa",
+        "android_client_info": {
+          "package_name": "com.mea.MoneyExchangeApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299265168031-cv0j1sj6p6f7ontcv61r2os6lvlkdhc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9srOz2ej3T1iaUAguFMVHHt8i33CFUOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299265168031-cv0j1sj6p6f7ontcv61r2os6lvlkdhc9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
