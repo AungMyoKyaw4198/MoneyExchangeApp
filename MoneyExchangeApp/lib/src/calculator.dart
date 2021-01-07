@@ -44,6 +44,8 @@ class _CalculatorState extends State<Calculator> {
         width: MediaQuery.of(context).size.width,
          child: Column(
            children:<Widget>[
+
+             // Showing current currency container
              Container(
                alignment: Alignment.center,
                decoration: BoxDecoration(
@@ -61,6 +63,8 @@ class _CalculatorState extends State<Calculator> {
                  child: Text(countryName[widget.country]+" - ${widget.country}", 
                               style: TextStyle(color: Colors.white, fontSize: 20),),
               ),
+
+              // Showing current rates
               Container(
                 height: 50,
                 alignment: Alignment.centerLeft,
@@ -71,14 +75,18 @@ class _CalculatorState extends State<Calculator> {
                               fontWeight: FontWeight.bold,
                             ),),
               ),
+
+              // Exchange rate calculation container
               Container(
                 margin: EdgeInsets.only(top: 30),
                 width: MediaQuery.of(context).size.width,
-                child: Column(children: <Widget>[
+                child: Column(
+                  children: <Widget>[
+
+                  // {currencies} -> MMK text
                   Container(
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.only(left: 20),
-                    // color: Colors.grey,
                     child: Row(
                       children: [
                         Container(
@@ -96,6 +104,8 @@ class _CalculatorState extends State<Calculator> {
                         ),
                       ],)
                   ),
+
+                  // Calculation container
                   Container(
                     margin: EdgeInsets.only(top: 20),
                     padding: EdgeInsets.only(left: 40),
@@ -148,11 +158,13 @@ class _CalculatorState extends State<Calculator> {
                         ),
                     ],)
                   )
+
                 ],),
               ),
 
               SizedBox(height: 30),
 
+              // MMK -> {currencies} text
               Container(
                 margin: EdgeInsets.only(top: 10),
                 width: MediaQuery.of(context).size.width,
@@ -160,7 +172,6 @@ class _CalculatorState extends State<Calculator> {
                   Container(
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.only(left: 20),
-                    // color: Colors.grey,
                     child: Row(
                       children: [
                         Container(
@@ -177,73 +188,62 @@ class _CalculatorState extends State<Calculator> {
                           ),)
                         ),
                       ],)
-                  ),
-
-                  Container(
-                    margin: EdgeInsets.only(top: 20),
-                    padding: EdgeInsets.only(left: 40),
-                    child: Row(children: <Widget>[
-                       Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black),
-                            color: Colors.grey[200],
-                          ),
-                          width: 100,
-                          child: TextField(
-                            decoration: const InputDecoration(
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              disabledBorder: InputBorder.none,
-                              hintText: '0',
-                          ),
-                          textAlign: TextAlign.end,
-                          onChanged: _onChanged,
-                          keyboardType: TextInputType.number,
-                          )
-                        ),
-                        Text(" MMK :  ",style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black),
-                            color: Colors.grey[200],
-                          ),
-                          width: 150,
-                          height: 50,
-                          alignment: Alignment.center,
-                          child: Text(FlutterMoneyFormatter(amount: _value).output.nonSymbol,style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),),
-                        ),
-                        Container(
-                          width: 50,
-                          child: Text('  ${widget.country}',style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),),
-                        ),
-                    ],)
-                  )
-                ],),
               ),
 
-              Expanded(
-                  child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                       height: 50,
-                       decoration: BoxDecoration(
-                       ),
-                       child: null,
-                     ),
-                ),
+              // calculation area
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(left: 40),
+                child: Row(children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black),
+                        color: Colors.grey[200],
+                      ),
+                      width: 100,
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          hintText: '0',
+                      ),
+                      textAlign: TextAlign.end,
+                      onChanged: _onChanged,
+                      keyboardType: TextInputType.number,
+                      )
+                    ),
+                    Text(" MMK :  ",style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black),
+                        color: Colors.grey[200],
+                      ),
+                      width: 150,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: Text(FlutterMoneyFormatter(amount: _value).output.nonSymbol,style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),),
+                    ),
+                    Container(
+                      width: 50,
+                      child: Text('  ${widget.country}',style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),),
+                    ),
+                ],)
+              )
+              ],),
               ),
 
            ]
